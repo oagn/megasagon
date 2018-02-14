@@ -65,7 +65,7 @@ public class MainQuiz extends Application {
         quiztext.setFont(Font.font("Arial", 20));
         
         TextField answer = new TextField();
-        
+       
         button2 = new Button("Quit");
         button2.setStyle("-fx-font-size: 30pt;");
         button2.setOnAction(e -> {
@@ -75,7 +75,13 @@ public class MainQuiz extends Application {
         button3 = new Button("Submit");
         button3.setStyle("-fx-font-size: 30pt;");
         button3.setOnAction(e -> {
-        System.out.println(answer.getText());
+        String useranswer = answer.getText();
+        if (useranswer.equals("a")) {
+        	AlertBox.display("Feedback", "Correct!");
+        }
+        else {
+        	AlertBox.display("Feedback", "Wrong!");
+        }
         });
         
         
